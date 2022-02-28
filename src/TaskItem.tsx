@@ -5,6 +5,7 @@ import DeleteOutlineOutlinedIcon from "@material-ui/icons/DeleteOutlineOutlined"
 import firebase from "firebase/app";
 import { useState } from "react";
 import { db } from "./firebase";
+import styles from "./TaskItem.module.css"
 
 interface Props {
   id: string;
@@ -37,10 +38,11 @@ const TaskItem: React.FC<Props> = (props) => {
           }
         />
       </Grid>
-      <button onClick={editTask}>
+
+      <button className={styles.taskitem__icon} onClick={editTask}>
         <EditOutlinedIcon />
       </button>
-      <button onClick={deleteTask}>
+      <button className={styles.taskitem__icon} onClick={deleteTask}>
         <DeleteOutlineOutlinedIcon />
       </button>
     </ListItem>
